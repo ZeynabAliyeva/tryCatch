@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+  <script>
+    async function tryCatch(url, n) {
+      let x = tryCatch("https://northwind.vercel.app/api/catego025dsv", 4);
+      try {
+        return await axios.get(url);
+      } catch (err) {
+        if (n === 1) {
+          throw err;
+        }
+        return await tryCatch(url, n - 1);
+      }
+      console.log(x);
+    }
+  </script>
+</html>
